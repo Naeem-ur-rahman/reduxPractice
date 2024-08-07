@@ -32,7 +32,67 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: .5rem;
+  gap: .5rem;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  padding: .5rem;
+}
+
+.product-item h2 {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.product-item p {
+  font-weight: 600;
+}
+
+.product-item button {
+  width: fit-content;
+  align-self: center;
+  background-color: rgb(54, 151, 241);
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+
+.image-container {
+  width: 1fr;
+  height: auto;
+}
+
+.image-container img {
+  width: 100%;
+  height: 200px;
+}
+
+.cart-container {
+  width: 100%;
+  height: 60px;
+  background-color: aquamarine;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-container p {
+  font-size: 25px;
+  font-weight: 500;
 }

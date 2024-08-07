@@ -1,14 +1,15 @@
 import './App.css';
-import Counter from './components/Counter';
-import { useDispatch } from 'react-redux';
+import Cart from './components/Cart';
+import Product from './components/Product';
+import { products } from './data/products';
 
 function App() {
-  const dispatch = useDispatch()
   return (
     <div className="App">
-      <button onClick={(e) => dispatch({ type: 'INCREMENT' })}>Increment</button>
-      <Counter />
-      <button onClick={(e) => dispatch({ type: 'DECREMENT' })}>Decrement</button>
+      <Cart />
+      <div className='product-container'>
+        {products.map(product => <Product {...product} />)}
+      </div>
     </div>
   );
 }
