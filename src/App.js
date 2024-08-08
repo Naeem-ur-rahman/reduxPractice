@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/fetch' element={<FetchPage />} />
+          <Route path='*' element={<div><h1>404 Error NO Page Found</h1></div>} />
         </Routes>
       </BrowserRouter>
     </div>
