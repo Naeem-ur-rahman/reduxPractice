@@ -13,6 +13,12 @@ const totoSlice = createSlice({
         data: null,
         isError: false,
     },
+
+    reducers: {
+        emptyTodos: (state, action) => {
+            state.data = null
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchTodos.pending, (state, actions) => {
             state.isLoading = true
@@ -29,5 +35,7 @@ const totoSlice = createSlice({
         });
     }
 })
+
+export const { emptyTodos } = totoSlice.actions
 
 export default totoSlice.reducer;

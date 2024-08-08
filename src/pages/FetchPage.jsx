@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchTodos } from '../redux/slices/todoSlice';
+import { emptyTodos, fetchTodos } from '../redux/slices/todoSlice';
 
 const FetchPage = () => {
     const dispatch = useDispatch();
@@ -10,6 +10,7 @@ const FetchPage = () => {
         <div>
             <Link to="/"><button style={{ marginRight: '200px' }}>Home</button></Link>
             <button onClick={e => dispatch(fetchTodos())}>Fetch API Redux</button>
+            <button onClick={e => dispatch(emptyTodos())}>Empty Todos</button>
 
             {
                 todos.isLoading ?
@@ -24,7 +25,7 @@ const FetchPage = () => {
                         :
                         <ol>
                             {
-                                todos.data?.map(todo => <li>{todo.title}</li>)
+                                todos?.data?.map(todo => <li>{todo.title}</li>)
                             }
                         </ol>
             }
