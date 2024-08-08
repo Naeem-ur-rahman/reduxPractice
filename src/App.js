@@ -1,15 +1,18 @@
 import './App.css';
-import Cart from './components/Cart';
-import Product from './components/Product';
-import { products } from './data/products';
+import FetchPage from './pages/FetchPage';
+import Home from './pages/Home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 
 function App() {
   return (
     <div className="App">
-      <Cart />
-      <div className='product-container'>
-        {products.map(product => <Product {...product} />)}
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/fetch' element={<FetchPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
